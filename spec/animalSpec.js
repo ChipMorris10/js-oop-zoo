@@ -26,28 +26,29 @@ describe('Animal', function(){
 
   describe('#awake', function(){
     it('should initially be off', function(){
-      // add spec
+      expect(animal.awake).toBe(false);
     });
   });
 
    describe('#wakeUp', function(){
     it('should change state to awake', function(){
-      // add spec
+      expect(animal.wakeUp()).toBe(true);
     });
   });
 
   describe('#sleep', function(){
     it('should initially be sleeping', function(){
-      // add spec
+      expect(animal.awake).toBe(false);
     });
   });
 
   describe('#feed', function(){
     it('should get fed if awake', function(){
-      // add spec
+      animal.awake = true;
+      expect(animal.feed()).toEqual("NOM NOM NOM");
     });
     it('not should get fed if sleeping', function(){
-      // add spec
+      expect(animal.feed()).toEqual("I'm sleeping");
     });
   });
 
