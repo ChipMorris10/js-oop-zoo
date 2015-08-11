@@ -3,13 +3,13 @@ var Animal = require('../src/animal.js');
 var animal;
 
 describe('Animal', function(){
-
-  beforeEach(function(){
+beforeEach(function(){
     animal = new Animal("Fido", 27, "Pig");
   });
 
   describe('#oink', function(){
     it('should oink if it is a pig', function(){
+      animal.oink('Pig');
       expect(animal.oink()).toEqual('oink');
     });
     it('should not oink if it is not pig', function(){

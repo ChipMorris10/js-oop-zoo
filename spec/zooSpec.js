@@ -5,13 +5,11 @@ var animal;
 var zoo;
 
 describe('Zoo', function(){
-
-  beforeEach(function(){
+    beforeEach(function(){
     zoo = new Zoo("Bronx","NYC");
     pig = new Animal("Babe",10,"Pig");
     lion = new Animal("Snoop",10,"lion");
   });
-
   describe('#changeLocation', function(){
     it('should change locations', function(){
       zoo.changeLocation("Denver");
@@ -31,7 +29,6 @@ describe('Zoo', function(){
       zoo.open();
       zoo.isOpen();
       expect(zoo.isOpen()).toBe('Open!');
-
     });
     it('should see if the zoo is closed', function(){
       zoo.close();
@@ -41,17 +38,21 @@ describe('Zoo', function(){
 
   describe('#animals', function(){
     it('should initially be empty', function(){
-      // add spec
+    expect(zoo.animals).toEqual([]) ;
     });
   });
 
-
   describe('#addAnimal', function(){
     it('should only add an animal to the animals array when the zoo is open', function(){
-      // add spec
+      zoo.close();
+      zoo.addAnimal('zebra');
+      expect(zoo.addAnimal()).toEqual(false);
     });
     it('should add an animal to the animals array', function(){
-      // add spec
+      zoo.open();
+      var tomZebra = new Animal("Tommy", 5, 'zebra');
+      zoo.addAnimal(tomZebra);
+      expect(zoo.animals[0].name).toEqual('Tommy');
     });
 
     it('should only add instances of animals', function(){

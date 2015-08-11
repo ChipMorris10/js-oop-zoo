@@ -4,7 +4,7 @@ function Zoo(name, location) {
     this.name = name;
     this.location = location;
     this.status = 'closed';
-    this.animal = [];
+    this.animals = [];
 }
 
 Zoo.prototype.changeLocation = function(location) {
@@ -29,4 +29,17 @@ Zoo.prototype.isOpen = function () {
         return "Open!";
     }
 };
+
+Zoo.prototype.addAnimal = function (animal) {
+    if (this.status === 'open') {
+         if (this.animals.indexOf(animal) === -1 && animal instanceof Animal) {
+            this.animals.push(animal);
+            return true;
+         }
+     }
+         else {
+            return false;
+        }
+};
+
 module.exports = Zoo;
