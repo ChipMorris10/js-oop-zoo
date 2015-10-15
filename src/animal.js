@@ -14,7 +14,7 @@ Animal.prototype.oink = function(){
 };
 
 Animal.prototype.growUp = function(){
-  this.age = this.age +=1;
+  this.age ++;    //  based on comments to Brandon, should this be reworded?
 };
 
 Animal.prototype.feed = function(){

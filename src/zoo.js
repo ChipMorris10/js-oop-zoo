@@ -12,14 +12,14 @@ Zoo.prototype.changeLocation = function(location){
 };
 
 Zoo.prototype.open = function(){
-  if(this.status === 'closed'){
-    this.status = 'open';
+  // if(this.status === 'closed'){
+    this.status = 'open';  // is this necessary? Yusef's code
   }
 };
 
 Zoo.prototype.close = function(){
-  if(this.status ==='open')
-    this.status = 'closed';
+  // if(this.status ==='open')
+    this.status = 'closed';      // is this necessary? Yusef's code
 };
 
 Zoo.prototype.isOpen = function(){
@@ -29,7 +29,7 @@ Zoo.prototype.isOpen = function(){
 
 Zoo.prototype.addAnimal = function(animal) {
   if (this.status === "open") {
-    if (this.animals.indexOf(animal) === -1 && animal instanceof Animal) {
+    if (this.animals.indexOf(animal) === -1 && animal instanceof Animal) {  // we struggled with this. I think we copied someone's code
         this.animals.push(animal);
         return true;
     }
@@ -39,7 +39,6 @@ Zoo.prototype.addAnimal = function(animal) {
   }
 };
 
-
 Zoo.prototype.removeAnimal = function(animal){
   if(this.status === 'open' && this.animals.indexOf(animal) !== -1) {
     this.animals.splice(this.animals.indexOf(animal, 1));
@@ -48,10 +47,6 @@ Zoo.prototype.removeAnimal = function(animal){
   else {
     return false;
   }
-
-
-
-
 };
 
 

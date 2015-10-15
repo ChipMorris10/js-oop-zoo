@@ -6,6 +6,8 @@ Lions, tigers, and bears..
 
 **Properties**:
 
+This IS A TEST
+
 - `name`
 - `age`
 - `kind` - a horse/lion/pig for example

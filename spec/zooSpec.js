@@ -45,6 +45,7 @@ describe('Zoo', function(){
     });
   });
 
+
   describe('#addAnimal', function(){
     it('should only add an animal to the animals array when the zoo is open', function(){
       zoo.close();
@@ -58,12 +59,14 @@ describe('Zoo', function(){
       expect(zoo.animals[0].name).toEqual('Tommy');
     });
 
+
     it('should only add instances of animals', function(){
       zoo.open();
       var tomZebra = new Animal('Tommy', 5, 'zebra');
       zoo.addAnimal(tomZebra);
       expect(tomZebra instanceof Animal).toBe(true);
     });
+
 
     it('should not add duplicates', function(){
       zoo.open();
@@ -74,12 +77,13 @@ describe('Zoo', function(){
     });
   });
 
+
   describe('#removeAnimal', function(){
     it('should remove an animal from the animals array if the zoo is open', function(){
         zoo.open();
       var tomZebra = new Animal('Tommy', 5, 'zebra');
-      // var bobZebra = new Animal('Bob', 6, 'zebra2');
-      // var nedZebra = new Animal('Ned', 7, 'zebra3');
+      var bobZebra = new Animal('Bob', 6, 'zebra2');
+      var nedZebra = new Animal('Ned', 7, 'zebra3');
       zoo.addAnimal(tomZebra);
       zoo.addAnimal(pig);
       zoo.addAnimal(lion);
